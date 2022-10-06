@@ -21,11 +21,11 @@ def get_user_cache_dir():
 def main():
     # parse arguments: list of keywords used as seed for name generator, count of names to generate, vocabulary file.
     parser = argparse.ArgumentParser()
-    parser.add_argument("--keywords", help="list of keywords used as seed for name generator", nargs="+", default=[""])
+    parser.add_argument("keywords", help="list of keywords used as seed for name generator", nargs="+", default=[""])
     parser.add_argument("-n", "--count", help="count of names to generate", type=int, default=10)
     parser.add_argument("-s", "--size", help="number of words in each name", type=int, default=2)
     parser.add_argument("-v", "--vocabulary", help="vocabulary file", type=str, default="vocabulary.txt")
-    parser.add_argument("-t", "--top", help="top n words to use", type=int, default=1000)
+    parser.add_argument("-t", "--top", help="top n words to use", type=int, default=500)
     parser.add_argument("--sep", help="separator between words in name", type=str, default="-")
     parser.add_argument("--cache", help="cache file", type=str, default="embeddings_cache.npz")
     args = parser.parse_args()
