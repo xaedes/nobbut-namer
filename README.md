@@ -4,9 +4,9 @@ Generate names from keywords using word embeddings.
 This project generated its own name.
 Code of nobbut_namer was made with copilot.
 
-Examples:
+Generated examples:
 
-> keywords potato harvester, potato, harvester
+> keywords: potato harvester, potato, harvester
 
 - pineta-teratomata
 - potgun-douter
@@ -19,7 +19,7 @@ Examples:
 - taisch-zapota
 - potlache-villota
 
-> keywords fruitful, enterprise, amazing
+> keywords: fruitful, enterprise, amazing
 
 - wauve-augend
 - excitant-bent
@@ -31,3 +31,16 @@ Examples:
 - tellus-fiel
 - vild-vied
 - wondersome-corp
+
+> keywords: farmer equipment
+
+- contadino-farmyard
+- agricultor-campier
+- contadino-foyer
+- waremaker-farmland
+- fermery-fannier
+- staffer-waferer
+- farmery-pasturers
+- campier-rimmaker
+- farm-farmout
+- farmership-farers
