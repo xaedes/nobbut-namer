@@ -47,9 +47,6 @@ def main():
     print("sep".ljust(15), args.sep)
     print("cache".ljust(15), args.cache)
 
-    print("Loading cache...")
-    #cache = Cache(args.cache)
-
     print("Loading model...")
     text_model = TextEmbeddingModel()
     get_text_embedding = text_model.get_text_embedding
@@ -221,7 +218,7 @@ def generate_names(get_text_embedding, vocabulary, voc_embeddings, keywords, cou
 
         
         # generate word tuples from the vocabulary by picking two words from the vocabulary.
-        # sort vocabulary by minimum similarity to on of the keywords and randomly pick from the top 100.
+        # sort vocabulary by minimum similarity to on of the keywords and randomly pick from the top.
         # use compare_embeddings() to compare the similarity of text embeddings.
         def compare_embeddings(a, b):
             # compare by similarity of two text embeddings.
@@ -260,7 +257,7 @@ def generate_names(get_text_embedding, vocabulary, voc_embeddings, keywords, cou
         top_word_similarities = [word_sim[1] for word_sim in top_words]
         top_words = [word_sim[0] for word_sim in top_words]
         print("generating names...")
-        # generate names by randomly picking two words from the top 100 words.
+        # generate names by randomly picking two words from the top words.
         combinations_limit = top*2
         names = []
         for words in random_combinations(top_words, top_word_similarities, size, count, combinations_limit):
