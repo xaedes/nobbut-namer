@@ -1,6 +1,6 @@
 # nobbut_namer
 ---
-Generate names from keywords.
+Generate names from keywords using word embeddings.
 This project generated its own name.
 Code of nobbut_namer was made with copilot.
 
