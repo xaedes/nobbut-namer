@@ -39,7 +39,7 @@ def main():
     args.cache = os.path.join(cache_dir, args.cache)
 
     # print arguments left justified with enough padding.
-    print("keywords".ljust(15), ", ".join(args.keywords))
+    print("keywords".ljust(15), ", ".join(map(keyword_to_string,args.keywords)))
     print("count".ljust(15), args.count)
     print("vocabulary".ljust(15), args.vocabulary)
     print("top".ljust(15), args.top)
@@ -72,6 +72,16 @@ def main():
     print("Generated names:")
     for name in names:
         print(name)
+
+def keyword_to_string(keyword):
+    # returns keywords as a string.
+    # when it contains a comma, it is enclosed in double quotes.
+    # otherwise, it is returned as is.
+    if "," in keyword:
+        return '"{}"'.format(keyword)
+    else:
+        return keyword
+
 
 def get_vocabulary(filename):
     # get the vocabulary from the file if it exists.
