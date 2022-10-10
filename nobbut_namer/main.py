@@ -76,12 +76,19 @@ def main():
 def keyword_to_string(keyword):
     # returns keywords as a string.
     # when it contains a comma, it is enclosed in double quotes.
+    # when it also contains quotes, it is enclosed in single quotes.
+    # when it contains both single and double quotes, it is enclosed in double quotes and the quotes are escaped.
     # otherwise, it is returned as is.
     if "," in keyword:
-        return '"{}"'.format(keyword)
+        if '"' in keyword:
+            if "'" in keyword:
+                return '"' + keyword.replace('"', '\\"') + '"'
+            else:
+                return "'" + keyword + "'"
+        else:
+            return '"' + keyword + '"'
     else:
         return keyword
-
 
 def get_vocabulary(filename):
     # get the vocabulary from the file if it exists.
